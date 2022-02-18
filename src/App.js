@@ -6,7 +6,7 @@ import {
   Link,
   Navigate
 } from 'react-router-dom';
-import Users from './users/pages/user';
+import Users from './users/pages/Users';
 
 const App = () => {
   return <Router>
