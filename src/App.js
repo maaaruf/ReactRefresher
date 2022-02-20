@@ -1,23 +1,27 @@
 import React from "react";
-import { 
+import {
   BrowserRouter as Router,
-  Routes ,
+  Routes,
   Route,
   Link,
-  Navigate
-} from 'react-router-dom';
-import Users from './users/pages/Users';
+  Navigate,
+} from "react-router-dom";
+
+import Users from "./users/pages/Users";
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 const App = () => {
-  return <Router>
-    <Routes>
-        <Route exact path='/' element={<Users />} />
-        <Route
-          path="*"
-          element={<Navigate to="/" />}
-        />
-    </Routes>
-  </Router>;
-}
+  return (
+    <Router>
+      <MainNavigation />
+      <main>
+        <Routes>
+          <Route exact path="/" element={<Users />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </main>
+    </Router>
+  );
+};
 
 export default App;
